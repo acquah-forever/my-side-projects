@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const ToDoList = () => {
-    const [task, setTask] = useState([])
-    const [newTask, setNewTask] = useState('')
-    const [isClicked, setIsClicked] = useState(false)
-
+    const [task, setTask] = useState([]);
+    const [newTask, setNewTask] = useState('');
+    const [isClicked, setIsClicked] = useState(false);
 
 
     function handleChange(e) {
-        setNewTask(e.target.value)
+        setNewTask(e.target.value);
     }
     function handleClick() {
-        setTask((task) => [...task, newTask])
-        setNewTask('')
-        setIsClicked(true)
+        if (!newTask.trim()) return;
+        setTask((task) => [...task, newTask]);
+        setNewTask('');
+        setIsClicked(true);
 
         setTimeout(() => {
-            setIsClicked(false)
-        }, 1500)
+            setIsClicked(false);
+        }, 1000)
     }
     function handleDelete(index) {
-        setTask(task.filter((_, i) => i !== index))
+        setTask(task.filter((_, i) => i !== index));
 
     }
     return (
@@ -33,11 +33,18 @@ const ToDoList = () => {
                     </div>
                 </div>
                 <button className='cursor-pointer p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
-                {task.length === 0 ? null : (
-                    <ul className='mt-5 p-2'>
-                        {task.map((e, index) => <li className='bg-indigo-500 mb-2 px-5 py-2.5 rounded-lg space-y-4 flex justify-between items-center' key={index}>{e} <button className='cursor-pointer px-3 py-1 bg--500 border bg-cyan-400 rounded-lg' onClick={() => handleDelete(index)}>Remove Task</button></li>)}
-                    </ul>
-                )}
+                <ul>
+                    {task.map((e, index) =>
+                        <div className='flex'>
+                            <li className='bg-indigo-300 rounded-lg p-3' key={index}>{e}</li>
+                            <div>
+                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'>Completed</button>
+                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'>Remove Task</button>
+                            </div>
+                        </div>
+
+                    )}
+                </ul>
 
             </div>
         </div>
