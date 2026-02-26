@@ -1,11 +1,12 @@
 import React from 'react'
-import Weather from '../components/weather'
+import ToDoList from '../components/ToDoList'
+
 
 const Home = () => {
     return (
         <div>
-            <div>
-                <Weather />
+            <div className='mt-20 container mx-auto h-120 max-w-2xl p-15 '>
+                <ToDoList />
             </div>
 
         </div>
