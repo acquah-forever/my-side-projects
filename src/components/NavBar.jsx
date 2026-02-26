@@ -3,7 +3,11 @@ import { X, Menu, Moon, Sun } from 'lucide-react'
 
 const NavBar = () => {
   const [open, setOpen] = useState(false)
-  const [dark, setdark] = useState(false)
+  const [dark, setDark] = useState(false)
+  function handleDark(){
+    document.body.classList.toggle('dark')
+    setDark(!dark)
+  }
 
 
 
@@ -22,6 +26,7 @@ const NavBar = () => {
         <li className='cursor-pointer text-white border px-4 py-2 rounded-xl bg-black'>Weather App</li>
       </ul>
       <button onClick={() => setOpen(!open)}>{open ? (<X className='w-7 h-7' />) : (<Menu className='w-7 h-7' />)}</button>
+      <button onClick={handleDark}>{dark ? (<Moon />) : (<Sun />)}</button>
 
     </div>
 
