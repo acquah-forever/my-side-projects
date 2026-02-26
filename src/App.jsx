@@ -9,7 +9,7 @@ import WeatherApp from './pages/WeatherApp'
 
 const App = () => {
   return (
-    <div className='bg-slate-200 dark:bg-slate-600 dark:text-white min-h-screen'>
+    <div className='bg-slate-200 dark:bg-slate-800 dark:text-white min-h-screen'>
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />

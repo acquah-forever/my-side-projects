@@ -4,6 +4,8 @@ import { X, Menu, Moon, Sun } from 'lucide-react'
 const NavBar = () => {
   const [open, setOpen] = useState(false)
   const [dark, setDark] = useState(false)
+
+  
   function handleDark() {
     document.body.classList.toggle('dark')
     setDark(!dark)
@@ -11,17 +13,17 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className='py-4 px-7 flex justify-between w-full backdrop-blur-xl'>
+      <div className='py-4 px-7 flex justify-between items-center w-full backdrop-blur-xl'>
         <div className='cursor-pointer flex items-center space-x-2'>
           <div className="px-4 py-2 bg-orange-500  rounded-lg">
             <h1 className='font-medium text-lg'>k</h1>
           </div>
           <h1 className="text-xl font-light">side<span className='text-2xl font-medium bg-linear-to-r from-blue-700 to-cyan-500 text-transparent bg-clip-text'>Projects</span></h1>
         </div>
-        <ul className='text-md hidden md:flex justify-center items-center space-x-5'>
-          <li className='cursor-pointer text-white border px-4 py-2 rounded-xl bg-black'>Todo App</li>
-          <li className='cursor-pointer text-white border px-4 py-2 rounded-xl bg-black'>Quiz App</li>
-          <li className='cursor-pointer text-white border px-4 py-2 rounded-xl bg-black'>Weather App</li>
+        <ul className='text-md  hidden md:flex space-x-5'>
+          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li>
+          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li>
+          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li>
         </ul>
         <div className='flex items-center space-x-3'>
           <button className='cursor-pointer flex md:hidden' onClick={() => setOpen(!open)}>{open ? (<X className='w-6 h-6' />) : (<Menu className='w-6 h-6' />)}</button>
