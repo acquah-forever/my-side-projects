@@ -19,9 +19,9 @@ const ToDoList = () => {
             setIsClicked(false);
         }, 1000)
     }
+
     function handleDelete(index) {
         setTask(task.filter((_, i) => i !== index));
-
     }
     return (
         <div>
@@ -32,14 +32,13 @@ const ToDoList = () => {
                         <input className={`w-full p-4 outline-none border-2 rounded-lg ${isClicked ? 'border-green-500' : 'border-blue-400'} `} onChange={handleChange} value={newTask} type="text" placeholder='Enter Task' />
                     </div>
                 </div>
-                <button className='cursor-pointer p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
+                <button className='cursor-pointer mb-7 p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
                 <ul>
                     {task.map((e, index) =>
-                        <div className='flex'>
-                            <li className='bg-indigo-300 rounded-lg p-3' key={index}>{e}</li>
-                            <div>
-                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'>Completed</button>
-                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'>Remove Task</button>
+                        <div key={index} className='mb-2 bg-indigo-300 rounded-lg p-3 flex justify-between items-center'>
+                            <li>{e}</li>
+                            <div className='flex space-x-3'>
+                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'onClick={() => handleDelete(index)}>Remove Task</button>
                             </div>
                         </div>
 
