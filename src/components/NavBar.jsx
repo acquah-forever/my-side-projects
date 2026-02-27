@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { X, Menu, Moon, Sun } from 'lucide-react'
-
+import { NavLink } from 'react-router-dom'
 
 
 const NavBar = () => {
@@ -16,16 +16,18 @@ const NavBar = () => {
   return (
     <div>
       <div className='py-4 px-7 flex justify-between items-center w-full backdrop-blur-xl'>
-        <div className='cursor-pointer flex items-center space-x-2'>
+        <NavLink to={'/'}>
+          <div className='cursor-pointer flex items-center space-x-2'>
           <div className="px-4 py-2 bg-orange-500  rounded-lg">
             <h1 className='font-medium text-lg'>k</h1>
           </div>
           <h1 className="text-xl font-light">side<span className='text-2xl font-medium bg-linear-to-r from-blue-700 to-cyan-500 text-transparent bg-clip-text'>Projects</span></h1>
         </div>
+          </NavLink>
         <ul className='text-md  hidden md:flex space-x-5'>
-          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
-          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
-          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
+          <NavLink to={'/todo app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
+          <NavLink to={'/quiz app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
+          <NavLink to={'/weather app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
         </ul>
         <div className='flex items-center space-x-3'>
           <button className='cursor-pointer flex md:hidden' onClick={() => setOpen(!open)}>{open ? (<X className='w-6 h-6' />) : (<Menu className='w-6 h-6' />)}</button>
