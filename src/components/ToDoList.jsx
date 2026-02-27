@@ -5,7 +5,6 @@ const ToDoList = () => {
     const [newTask, setNewTask] = useState('');
     const [isClicked, setIsClicked] = useState(false);
 
-
     function handleChange(event) {
         setNewTask(event.target.value);
     }
@@ -14,7 +13,6 @@ const ToDoList = () => {
         setTask((task) => [...task, newTask]);
         setNewTask('');
         setIsClicked(true);
-
         setTimeout(() => {
             setIsClicked(false);
         }, 1000)
@@ -33,17 +31,18 @@ const ToDoList = () => {
                     </div>
                 </div>
                 <button className='cursor-pointer mb-7 p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
-                <ul>
-                    {task.map((e, index) =>
-                        <div key={index} className='mb-2 bg-indigo-300 dark:bg-indigo-400 rounded-lg px-3 py-4 md:py-1 grid grid-cols-1 space-y-2 md:flex md:flex-row md:justify-between md:items-center'>
-                            <li className='flex flex-col sm:flex-row sm:items-center sm:justify-between px-1 tracking-tight wrap-break-word min-w-0'>{e}</li>
-                            <div className='flex space-x-3'>
-                                <button className='bg-cyan-300 dark:bg-cyan-600 px-3 py-2 border rounded-lg cursor-pointer w-full sm:w-auto'onClick={() => handleDelete(index)}>Remove Task</button>
+                {task.length > 0 ? (
+                    <ul>
+                        {task.map((e, index) =>
+                            <div key={index} className='mb-2 bg-indigo-300 dark:bg-indigo-400 rounded-lg px-3 py-4 md:py-1 grid grid-cols-1 space-y-2 md:flex md:flex-row md:justify-between md:items-center'>
+                                <li className='flex flex-col sm:flex-row sm:items-center sm:justify-between px-1 tracking-tight wrap-break-word min-w-0'>{e}</li>
+                                <div className='flex space-x-3'>
+                                    <button className='bg-cyan-300 dark:bg-cyan-600 px-3 py-2 border rounded-lg cursor-pointer w-full sm:w-auto' onClick={() => handleDelete(index)}>Remove Task</button>
+                                </div>
                             </div>
-                        </div>
+                        )}
+                    </ul> ) : null}
 
-                    )}
-                </ul>
 
             </div>
         </div>
