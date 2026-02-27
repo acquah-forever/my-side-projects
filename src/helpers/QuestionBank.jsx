@@ -1,4 +1,4 @@
-export const Questions = [
+export const QuestionBank = [
     {
         prompt:"What is your preferred Programming Language?",
         optionA:"Rust",
