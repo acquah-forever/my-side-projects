@@ -25,7 +25,7 @@ const ToDoList = () => {
     }
     return (
         <div>
-            <div className='shadow-[8px_8px_8px_8px_black] dark:shadow-none dark:border-2 p-15 rounded-xl'>
+            <div className='shadow-[8px_8px_8px_8px_black] dark:shadow-none dark:border-none p-15 rounded-xl'>
                 <div className='flex flex-col mb-10'>
                     <h1 className="text-center font-semibold text-3xl mb-7">CLASSY TODO LIST 📋 😊</h1>
                     <div className='w-full'>
@@ -35,10 +35,10 @@ const ToDoList = () => {
                 <button className='cursor-pointer mb-7 p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
                 <ul>
                     {task.map((e, index) =>
-                        <div key={index} className='mb-2 bg-indigo-300 rounded-lg px-3 py-4 md:py-1 grid grid-cols-1 space-y-2 md:flex md:flex-row md:justify-between md:items-center'>
+                        <div key={index} className='mb-2 bg-indigo-300 dark:bg-indigo-400 rounded-lg px-3 py-4 md:py-1 grid grid-cols-1 space-y-2 md:flex md:flex-row md:justify-between md:items-center'>
                             <li className='flex flex-col sm:flex-row sm:items-center sm:justify-between px-1 tracking-tight wrap-break-word min-w-0'>{e}</li>
                             <div className='flex space-x-3'>
-                                <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer w-full sm:w-auto'onClick={() => handleDelete(index)}>Remove Task</button>
+                                <button className='bg-cyan-300 dark:bg-cyan-600 px-3 py-2 border rounded-lg cursor-pointer w-full sm:w-auto'onClick={() => handleDelete(index)}>Remove Task</button>
                             </div>
                         </div>
 

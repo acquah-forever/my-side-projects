@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { X, Menu, Moon, Sun } from 'lucide-react'
 
+
+
 const NavBar = () => {
   const [open, setOpen] = useState(false)
   const [dark, setDark] = useState(false)
@@ -21,9 +23,9 @@ const NavBar = () => {
           <h1 className="text-xl font-light">side<span className='text-2xl font-medium bg-linear-to-r from-blue-700 to-cyan-500 text-transparent bg-clip-text'>Projects</span></h1>
         </div>
         <ul className='text-md  hidden md:flex space-x-5'>
-          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li>
-          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li>
-          <li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li>
+          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
+          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
+          <NavLink><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
         </ul>
         <div className='flex items-center space-x-3'>
           <button className='cursor-pointer flex md:hidden' onClick={() => setOpen(!open)}>{open ? (<X className='w-6 h-6' />) : (<Menu className='w-6 h-6' />)}</button>
