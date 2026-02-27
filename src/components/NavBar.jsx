@@ -38,9 +38,9 @@ const NavBar = () => {
       {open && (
         <div className='p-4 border rounded-xl mx-7 md:hidden'>
           <ul className='text-lg font-light tracking-tight flex flex-col space-y-2'>
-            <li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Todo App</li>
-            <li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Quiz App</li>
-            <li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Weather App</li>
+            <NavLink to={'/todo'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Todo App</li></NavLink>
+            <NavLink to={'/quiz'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Quiz App</li></NavLink>
+            <NavLink to={'/weatherapp'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Weather App</li></NavLink>
           </ul>
           <button className='cursor-pointer mt-3 flex md:hidden' onClick={handleDark}>{dark ? (<Moon />) : (<Sun />)}</button>
         </div>
