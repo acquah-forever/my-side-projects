@@ -5,7 +5,7 @@ export const QuestionBank = [
         optionB:"php",
         optionC:"JavaScript",
         optionD:"Java",
-        answer:"JavaScript"
+        answer:"C"
     },
     {
         prompt:"What is your preferred Framework?",
@@ -13,7 +13,7 @@ export const QuestionBank = [
         optionB:"React.js",
         optionC:"Angular",
         optionD:"Node.js",
-        answer:"React.js"
+        answer:"B"
     },
     {
         prompt:"Which state is the most used state in React?",
@@ -21,6 +21,6 @@ export const QuestionBank = [
         optionB:"useContext",
         optionC:"useReducer",
         optionD:"useState",
-        answer:"useState"
+        answer:"D"
     }
 ]
