@@ -6,8 +6,8 @@ const ToDoList = () => {
     const [isClicked, setIsClicked] = useState(false);
 
 
-    function handleChange(e) {
-        setNewTask(e.target.value);
+    function handleChange(event) {
+        setNewTask(event.target.value);
     }
     function handleClick() {
         if (!newTask.trim()) return;
