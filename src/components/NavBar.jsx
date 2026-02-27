@@ -25,9 +25,9 @@ const NavBar = () => {
         </div>
           </NavLink>
         <ul className='text-md  hidden md:flex space-x-5'>
-          <NavLink to={'/todo app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
-          <NavLink to={'/quiz app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
-          <NavLink to={'/weather app'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
+          <NavLink to={'/todo'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
+          <NavLink to={'/quiz'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
+          <NavLink to={'/weatherapp'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
         </ul>
         <div className='flex items-center space-x-3'>
           <button className='cursor-pointer flex md:hidden' onClick={() => setOpen(!open)}>{open ? (<X className='w-6 h-6' />) : (<Menu className='w-6 h-6' />)}</button>

@@ -1,9 +1,13 @@
 import React from 'react'
+import ToDoList from '../components/ToDoList'
 
 const Todo = () => {
   return (
     <div>
-      
+      <div className='mt-10 min-h-screen overflow-auto container mx-auto h-120 max-w-7xl p-15 '>
+        <ToDoList />
+      </div>
+
     </div>
   )
 }
