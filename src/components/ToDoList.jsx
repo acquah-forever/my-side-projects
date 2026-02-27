@@ -35,8 +35,8 @@ const ToDoList = () => {
                 <button className='cursor-pointer mb-7 p-3 bg-blue-300 border rounded-lg disabled:opacity-50' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
                 <ul>
                     {task.map((e, index) =>
-                        <div key={index} className='mb-2 bg-indigo-300 rounded-lg p-3 flex justify-between items-center'>
-                            <li>{e}</li>
+                        <div key={index} className='mb-2 bg-indigo-300 rounded-lg px-3 grid grid-cols-1 md:flex md:flex-row md:justify-between md:items-center'>
+                            <li className='px-1'>{e}</li>
                             <div className='flex space-x-3'>
                                 <button className='bg-cyan-300 px-3 py-2 border rounded-lg cursor-pointer'onClick={() => handleDelete(index)}>Remove Task</button>
                             </div>
