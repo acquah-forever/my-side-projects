@@ -37,6 +37,7 @@ const Questions = () => {
       ) : (
         <button className='cursor-pointer bg-slate-500 p-4 border-2 rounded-lg' onClick={nextQuestion}>Next Question</button>
       )}
+
     </div>
   )
 }
