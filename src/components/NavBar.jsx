@@ -21,7 +21,7 @@ const NavBar = () => {
           <div className="px-4 py-2 bg-orange-500  rounded-lg">
             <h1 className='font-medium text-lg'>k</h1>
           </div>
-          <h1 className="text-xl font-light">side<span className='text-2xl font-medium bg-linear-to-r from-blue-700 to-cyan-500 text-transparent bg-clip-text'>Projects</span></h1>
+          <h1 className="text-xl text-black dark:text-white font-light">side<span className='text-2xl font-medium bg-linear-to-r from-blue-700 to-cyan-500 text-transparent bg-clip-text'>Projects</span></h1>
         </div>
           </NavLink>
         <ul className='text-md  hidden md:flex space-x-5'>
@@ -31,7 +31,7 @@ const NavBar = () => {
         </ul>
         <div className='flex items-center space-x-3'>
           <button className='cursor-pointer flex md:hidden' onClick={() => setOpen(!open)}>{open ? (<X className='w-6 h-6' />) : (<Menu className='w-6 h-6' />)}</button>
-          <button className='cursor-pointer hidden md:flex' onClick={handleDark}>{dark ? (<Moon />) : (<Sun />)}</button>
+          <button className='cursor-pointer hidden md:flex' onClick={handleDark}>{dark ? (<Moon className='text-black dark:text-white' />) : (<Sun className='text-black dark:text-white' />)}</button>
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const NavBar = () => {
             <NavLink to={'/quiz'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Quiz App</li></NavLink>
             <NavLink to={'/weatherapp'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Weather App</li></NavLink>
           </ul>
-          <button className='cursor-pointer mt-3 flex md:hidden' onClick={handleDark}>{dark ? (<Moon />) : (<Sun />)}</button>
+          <button className='cursor-pointer mt-3 flex md:hidden' onClick={handleDark}>{dark ? (<Moon className='text-black dark:text-white' />) : (<Sun className='text-black dark:text-white'  />)}</button>
         </div>
       )}
     </div>
