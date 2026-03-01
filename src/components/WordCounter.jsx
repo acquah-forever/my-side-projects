@@ -1,32 +1,43 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const WordCounter = () => {
+
+    const [count, setCount] = useState(0)
+    const [word, setWord] = useState(0)
+    const [face, setFace] = useState(150)
+    const[twitter, setTwitter] = useState(300)
+
+    function handleChange(event){
+        setCount(event.target.value)
+
+    }
+    
     return (
-        <div className='border p-10 mx-auto max-w-4xl h-120'>
-            <div className='flex justify-center mb-10'>
+        <div className='border mx-auto max-w-4xl h-150'>
+            <div className='bg-sky-400 p-10 w-full flex justify-center mb-10'>
                 <hi className="font-medium text-3xl">WORD COUNTER</hi>
             </div>
-            <div className='flex justify-between h-80'>
-                <div>
-                    <input className='outline-none py-2 border w-4/2' type="text" placeholder='Enter You Text' />
+            <div className='grid grid-cols-1 md:flex md:justify-between px-7 h-80'>
+                <div className='mt-12'>
+                    <input className='outline-none  py-2  w-5/2'onChange={handleChange} type="text" placeholder='Enter You Text' />
                 </div>
 
-                <div className='px-5 text-center gap-3 grid grid-cols-2 items-center'>
+                <div className='px-5 text-center gap-x-20 gap-y-20 grid grid-cols-2 items-center'>
                     <div>
-                        <span className="font-medium text-2xl">0</span>
-                        <h1 className="text-2xl font-medium">WORDS</h1>
+                        <span className="font-medium text-2xl">{count}</span>
+                        <h1 className="text-2xl font-medium">ALPHABETS</h1>
                     </div>
                     <div>
-                        <span className="font-medium text-2xl">0</span>
+                        <span className="font-medium text-2xl">{face}</span>
                         <h1 className="font-medium text-2xl">FACEBOOK</h1>
                     </div>
                     <div>
-                        <span className="font-medium text-2xl">0</span>
+                        <span className="font-medium text-2xl">{twitter}</span>
                         <h1 className="font-medium text-2xl">TWITTER</h1>
                     </div>
                     <div>
                         <span className="font-medium text-2xl">0</span>
-                        <h1 className="font-medium text-2xl">INSTAGRAM</h1>
+                        <h1 className="font-medium text-2xl">WORDS</h1>
                     </div>
                 </div>
             </div>
