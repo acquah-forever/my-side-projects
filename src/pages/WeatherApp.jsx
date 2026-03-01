@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Sun, Cloudy, CloudDrizzle, CloudHail, Snowflake,    } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { Search, Sun, Cloudy, CloudDrizzle, CloudHail, Snowflake, Wind, WindArrowDown } from 'lucide-react'
 
 
 const WeatherApp = () => {
@@ -8,28 +8,52 @@ const WeatherApp = () => {
   function handleChange(event) {
     setText(event.target.value)
   }
-  function handleNewText(){
-    if(!newText.trim()) return
+  function handleNewText() {
+    if (!newText.trim()) return
     setGreenBorder(true)
     setTimeout(() => {
       setGreenBorder(false)
-    },2000)
+    }, 2000)
   }
+
+  const search = async(city)=>{
+    try{
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${import.meta.env.VITE_APP_ID}`)
+      const data = await response.json()
+      console.log(data)
+
+    } catch (error) {
+
+    }
+  }
+
+  useEffect(() => {
+    search("London")
+  },[])
 
 
   return (
     <div className='mx-auto mt-30 bg-indigo-500 border-2 text-white max-w-90 min-h-100vh p-12 rounded-2xl flex flex-col justify-center items-center'>
-      <div className='mb-10 flex items-center space-x-6'>
-        <input className={`border-2 p-2 outline-none ${greenBorder ? 'border-green-500' : 'border-black'} rounded-2xl text-white`} onChange={handleChange} placeholder='Enter City' />
-        <button className='cursor-pointer border p-2 bg-sky-400 rounded'onClick={handleNewText}>Search</button>
+      <div className='mb-10 flex items-center space-x-3'>
+        <input className={`border-2 p-2 outline-none ${greenBorder ? 'border-green-500' : 'border-white'} rounded-2xl text-white`} onChange={handleChange} placeholder='Enter City' />
+        <Search />
       </div>
       <p>{text}</p>
       <Sun className='w-15 h-15 mb-10' />
-      <h1 className='mb-12 text-5xl'>41C</h1>
-      <h1 className='mb-7 text-xl'>Newport</h1>
-      <div className='flex space-x-5'>
-        <h1 className='text-xl'>Humidity</h1>
-        <h1 className='text-xl'>Wind Speed</h1>
+      <h1 className='mb-7 text-5xl'>8°c</h1>
+      <h1 className='mb-10 text-5xl'>Bristol</h1>
+      <div className='flex justify-center items-center gap-10'>
+        <div className='flex flex-col' >
+          <Wind />
+          <p className='text-lg'>5.2 km/h</p>
+          <p className='text-lg'>Wind Speed</p>
+        </div>
+
+        <div>
+          <WindArrowDown />
+          <p className='text-lg'>77%</p>
+          <p className='text-lg'>Humidity</p>
+        </div>
       </div>
     </div>
   )
