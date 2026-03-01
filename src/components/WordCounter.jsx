@@ -16,7 +16,9 @@ const WordCounter = () => {
         const digits = value.length
 
         setCount(digits)
+    
         setFace(10 - digits)
+  
         setTwitter(20 - digits)
 
         const words = value.trim() === "" ? 
@@ -42,11 +44,11 @@ const WordCounter = () => {
                         <h1 className="text-2xl font-medium">LETTERS</h1>
                     </div>
                     <div>
-                        <span className={`font-medium text-2xl ${face < 0 ? "text-red-500" : "text-black dark:text-white"}`}>{face}</span>
+                        <span className={`font-medium text-2xl ${face < 0 ? "text-red-500" : "text-black dark:text-white"}`}>{face <= 0 ? (0) : (face)}</span>
                         <h1 className={`font-medium text-2xl ${face < 0 ? "text-red-500" : "text-black dark:text-white"}`}>FACEBOOK</h1>
                     </div>
                     <div>
-                        <span className={`font-medium text-2xl ${twitter < 0 ? "text-red-500" : "text-black dark:text-white"}`}>{twitter}</span>
+                        <span className={`font-medium text-2xl ${twitter < 0 ? "text-red-500" : "text-black dark:text-white"}`}>{twitter <= 0 ? (0) : (twitter)}</span>
                         <h1 className={`font-medium text-2xl ${twitter < 0 ? "text-red-500" : "text-black dark:text-white"}`}>TWITTER</h1>
                     </div>
                     <div>
