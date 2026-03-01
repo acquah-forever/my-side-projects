@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
+* {
+    font-family: 'Readex Pro', sans-serif
+}
 @import "tailwindcss";
 @plugin "daisyui";
 
