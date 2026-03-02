@@ -12,11 +12,7 @@ const Comments = () => {
     const amountOfWords = value.trim().split(/\s+/).length
     setNewText(value)
     setWordcount(digits - amountOfWords)
-    if(newText.trim() == ""){
-      0
-    } else {
-      wordCount
-    }
+    
   }
 
   function handleClick(){
