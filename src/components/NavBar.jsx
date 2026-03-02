@@ -28,7 +28,7 @@ const NavBar = () => {
           <NavLink to={'/todo'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Todo App</li></NavLink>
           <NavLink to={'/quiz'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Quiz App</li></NavLink>
           <NavLink to={'/weatherapp'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Weather App</li></NavLink>
-          <NavLink to={'/wordcounter'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Word Counter</li></NavLink>
+          <NavLink to={'/comment section'}><li className='cursor-pointer dark:text-white text-black rounded-xl'>Comment Section</li></NavLink>
 
         </ul>
         <div className='flex items-center space-x-3'>
@@ -43,7 +43,7 @@ const NavBar = () => {
             <NavLink to={'/todo'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Todo App</li></NavLink>
             <NavLink to={'/quiz'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Quiz App</li></NavLink>
             <NavLink to={'/weatherapp'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Weather App</li></NavLink>
-            <NavLink to={'/wordcounter'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Word Counter</li></NavLink>
+            <NavLink to={'/comment section'}><li className='cursor-pointer text-black dark:text-white'onClick={() => setOpen(!open)}>Comment Section</li></NavLink>
 
           </ul>
           <button className='cursor-pointer mt-3 flex md:hidden' onClick={handleDark}>{dark ? (<Moon className='text-black dark:text-white' />) : (<Sun className='text-black dark:text-white'  />)}</button>
