@@ -51,12 +51,12 @@ const Comments = () => {
     setCommentCount(commentCount - 1)
   }
 
-  function like(index) {
+  function handleLike(index) {
     setText((prevText) => prevText.map((comment, i) =>
       i === index ? { ...comment, likes: comment.likes + 1 } : comment))
   }
 
-  function dislike(index) {
+  function handleDislike(index) {
     setText((prevText) => prevText.map((comment, i) =>
       i === index ? { ...comment, dislikes: comment.dislikes + 1 } : comment))
   }
@@ -82,12 +82,12 @@ const Comments = () => {
                 {comment.content}
                 <div className='flex items-center space-x-2 mt-1'>
                   <ThumbsUp className='w-5 h-5'
-                    onClick={() => like(index)}
+                    onClick={() => handleLike(index)}
                   />
                   <span>{comment.likes}</span>
 
                   <ThumbsDown className='w-5 h-5'
-                    onClick={() => dislike(index)}
+                    onClick={() => handleDislike(index)}
                   />
 
                   <span>{comment.dislikes}</span>
