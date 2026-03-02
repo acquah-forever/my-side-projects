@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { ThumbsUp, ThumbsDown, Heart } from 'lucide-react'
 
 const digits = 200
+const hackersign = "*"
 
 const Comments = () => {
   const [text, setText] = useState([])
@@ -14,20 +16,31 @@ const Comments = () => {
     const words = value.trim() === "" ? (0) : (value.trim().split(/\s+/).length)
     setWordCount(digits - words)
 
+
   }
 
   function handleClick() {
-    !newText.trim() ?
-      alert("Please Fill Input Correctly") :
-      (setText((prevText) => [...prevText, newText]))
+    if (!newText.trim()) {
+      alert("Please Fill Input Correctly")
+      return
+    }
+
+    if (newText.trim().includes(hackersign)) {
+      alert("Please Ensure Comment Does Not Include '*'")
+      return
+    }
+
+    (setText((prevText) => [...prevText, newText]))
 
     setNewText('')
     setWordCount(digits)
 
-    setIsActive(true)
+    !newText.trim() ? setIsActive(false) : setIsActive(true)
+
     setTimeout(() => {
       setIsActive(false)
     }, 1000)
+
   }
 
   return (
@@ -42,7 +55,18 @@ const Comments = () => {
           <button className={`cursor-pointer ${isActive ? "bg-green-500" : "bg-sky-400"} p-3 w-40  rounded-lg`} onClick={handleClick}>Send Comment</button>
         </div>
       </div>
-      <p>{text}</p>
+      <div className='mt-7 h-70 p-3'>
+        <ul>
+          {text.map((e, index) =>
+            <li className='bg-sky-300 rounded-lg w-full mb-3 px-3 py-1' key={index}>{e}
+            <div className='flex items-center space-x-2'>
+              <ThumbsUp />
+              <ThumbsDown />
+              <Heart />
+            </div>
+            </li>)}
+        </ul>
+      </div>
     </div>
   )
 }
