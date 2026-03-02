@@ -18,7 +18,6 @@ const App = () => {
         <Route path='/quiz' element={<Quiz />} />
         <Route path='/weatherapp' element={<WeatherApp />} />
         <Route path='/comments' element={<Comments />} />
-
       </Routes>
     </div>
   )
