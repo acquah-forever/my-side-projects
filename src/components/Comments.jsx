@@ -42,9 +42,13 @@ const Comments = () => {
     }, 1000)
 
   }
+  
+  function handleDelete(){
+
+  }
 
   return (
-    <div className='p-10 border max-w-3xl h-150'>
+    <div className='p-10 border max-w-3xl h-170'>
       <h1 className="text-3xl text-center font-medium mb-7">INTERACTIVE COMMENT SECTION</h1>
       <div className='flex flex-col'>
         <div className={`border-2 rounded-xl p-1 mb-5 ${isActive ? "border-green-500" : "border-slate-300"}`}>
@@ -55,14 +59,18 @@ const Comments = () => {
           <button className={`cursor-pointer ${isActive ? "bg-green-500" : "bg-sky-400"} p-3 w-40  rounded-lg`} onClick={handleClick}>Send Comment</button>
         </div>
       </div>
-      <div className='mt-7 h-70 p-3'>
+      <h1>Total Comments: <span>0</span></h1>
+      <div className='flex flex-col border mt-7 h-80 px-3 py-5 w-full overflow-y-scroll text-black'>
         <ul>
           {text.map((e, index) =>
-            <li className='bg-sky-300 rounded-lg w-full mb-3 px-3 py-1' key={index}>{e}
-            <div className='flex items-center space-x-2'>
-              <ThumbsUp />
-              <ThumbsDown />
-              <Heart />
+            <li className='bg-sky-300 dark:bg-sky-200 rounded-lg w-full mb-3 px-3 py-1' key={index}>{e}
+            <div className='flex items-center space-x-2 mt-1'>
+              <ThumbsUp className='w-5 h-5' />
+              <ThumbsDown className='w-5 h-5' />
+              <Heart className='w-5 h-5' />
+            </div>
+            <div className='flex justify-end'>
+            <button className='px-4 py-1 border rounded-lg bg-indigo-400 'onClick={() => handleDelete(index)}>Delete</button>
             </div>
             </li>)}
         </ul>
