@@ -2,7 +2,7 @@ import React,{ useContext } from 'react'
 import { QuizContext } from '../helpers/Context'
 
 const MainMenu = () => {
-  const {gameState,setGameState} = useContext(QuizContext)
+  const {setGameState} = useContext(QuizContext)
 
   function handleClick(){
     setGameState('quiz')

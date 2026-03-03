@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import MainMenu from '../components/MainMenu'
 import Questions from '../components/Questions'
 import EndScreen from '../components/EndScreen'
