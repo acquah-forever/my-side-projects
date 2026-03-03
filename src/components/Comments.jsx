@@ -40,7 +40,7 @@ const Comments = () => {
 
     setTimeout(() => {
       setIsActive(false)
-    }, 1000)
+    }, 500)
 
     setCommentCount(prevCommentCount => prevCommentCount + 1)
 
