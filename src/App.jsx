@@ -5,7 +5,7 @@ import NavBar from './components/NavBar'
 import Todo from './pages/Todo'
 import Quiz from './pages/Quiz'
 import WeatherApp from './pages/WeatherApp'
-import Comments from './components/Comments'
+import Comments from './pages/Comments'
 
 
 const App = () => {
