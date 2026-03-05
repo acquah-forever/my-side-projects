@@ -6,7 +6,7 @@ import { Projects } from '../helpers/Projects'
 
 const Home = () => {
     return (
-        <div>
+        <home>
             <div>
                 <Hero />
             </div>
@@ -19,7 +19,7 @@ const Home = () => {
             </div>
 
 
-        </div>
+        </home>
     )
 }
 
