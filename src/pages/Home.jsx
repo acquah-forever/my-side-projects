@@ -1,6 +1,6 @@
 import React from 'react'
 import CurrentProjects from '../components/CurrentProjects'
-import Projects from './helper/Projects'
+import Projects from '../helpers/Projects'
 
 
 const Home = () => {
@@ -11,7 +11,11 @@ const Home = () => {
             <button>View Projects</button>
             <h1>Current Projects</h1>
             <div>
-                {data.map((projects,id))}
+                {Projects.map((e) => (<CurrentProjects
+                key = {e.id}
+                title = {e.title}
+                description={e.description}/>
+                ))}
 
             </div>
 
