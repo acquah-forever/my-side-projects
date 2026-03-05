@@ -6,7 +6,7 @@ import Todo from './pages/Todo'
 import Quiz from './pages/Quiz'
 import WeatherApp from './pages/WeatherApp'
 import Comments from './pages/Comments'
-import CurrentProjects from './components/CurrentProjects'
+
 
 
 const App = () => {
