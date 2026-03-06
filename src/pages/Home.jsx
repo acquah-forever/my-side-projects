@@ -17,8 +17,6 @@ const Home = () => {
                     description={e.description} />
                 ))}
             </div>
-
-
         </home>
     )
 }

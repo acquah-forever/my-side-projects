@@ -63,7 +63,7 @@ const Comments = () => {
 
   return (
 
-    <div className='flex flex-col justify-center px-20 py-30 w-200'>
+    <div className='flex flex-col justify-center  py-30 w-200'>
       <h1 className="text-3xl text-center font-medium mb-7">COMMENT SECTION</h1>
       <div className='flex flex-col'>
         <div className={`border-2 rounded-xl p-1 mb-5 ${isActive ? "border-green-500" : "border-slate-300"}`}>

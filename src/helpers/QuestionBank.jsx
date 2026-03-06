@@ -17,9 +17,9 @@ export const QuestionBank = [
     },
     {
         prompt:"Which state is the most used state in React?",
-        optionA:"useQuerry",
+        optionA:"useForm",
         optionB:"useContext",
-        optionC:"useReducer",
+        optionC:"useRef",
         optionD:"useState",
         answer:"D"
     }

@@ -13,7 +13,7 @@ const EndScreen = () => {
 
 
   return (
-    <div className='mt-5 w-125 h-125 border rounded-lg bg-sky-500 flex flex-col justify-center items-center'>
+    <div className='mt-5 flex flex-col justify-center items-center'>
       <h1 className='text-3xl mb-4'>Quiz Done</h1>
       {" "}
       <h3 className='text-2xl font-medium mb-5'>{score} / {QuestionBank.length}</h3>

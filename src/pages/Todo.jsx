@@ -31,7 +31,7 @@ const ToDoList = () => {
           </div>
         </div>
         <div className='flex justify-center item-center'>
-        <button className='cursor-pointer mb-7 p-3 bg-blue-300 border rounded-lg disabled:opacity-50 ' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
+        <button className='cursor-pointer mb-7 p-3 bg-blue-400 border rounded-lg disabled:opacity-50 ' onClick={handleClick} disabled={!newTask.trim()}>Add Task</button>
         </div>
         {task.length > 0 ? (
           <ul>
