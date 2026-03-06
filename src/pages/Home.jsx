@@ -10,13 +10,13 @@ const Home = () => {
             <div>
                 <Hero />
             </div>
-            {/* <div>
+            <div>
                 {Projects.map((e) => (<CurrentProjects
                     key={e.id}
                     title={e.title}
                     description={e.description} />
                 ))}
-            </div> */}
+            </div>
 
 
         </home>

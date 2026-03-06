@@ -11,7 +11,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0)
 
   return (
-    <div className='flex flex-col justify-center items-center'>
+    <div className='flex flex-col min-h-screen justify-center items-center'>
       <h1 className='text-3xl text-black dark:text-white font-bold'>Quiz App</h1>
       <QuizContext.Provider value={{gameState, setGameState, score, setScore}}>
         {gameState === 'menu' && <MainMenu />}

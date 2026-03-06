@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import NavBar from './components/NavBar'
 import Todo from './pages/Todo'
 import Quiz from './pages/Quiz'
-import WeatherApp from './pages/WeatherApp'
 import Comments from './pages/Comments'
 
 
@@ -17,7 +16,6 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/todo' element={<Todo />} />
         <Route path='/quiz' element={<Quiz />} />
-        <Route path='/weatherapp' element={<WeatherApp />} />
         <Route path='/comments' element={<Comments />} />
       </Routes>
     </div>
